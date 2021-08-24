@@ -1,13 +1,20 @@
+import { Container } from '@material-ui/core';
+import React, { Component } from 'react';
 import './App.css';
 import FormularioCadastro from './components/FormularioCadastro/FormularioCadastro';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Oi</h1>
-      <FormularioCadastro/>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <Container
+        component="article"
+        maxWidth="sm"
+      >
+        <h1>Formulário</h1>
+        <FormularioCadastro />
+      </Container>
+    );
+  }
 }
 
 export default App;
