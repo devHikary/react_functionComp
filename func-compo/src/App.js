@@ -2,7 +2,7 @@ import { Container, Typography } from '@material-ui/core';
 import React, { Component } from 'react';
 import './App.css';
 import FormularioCadastro from './components/FormularioCadastro/FormularioCadastro';
-
+// import 'fontsource-roboto';
 
 class App extends Component {
   render() {
@@ -14,10 +14,14 @@ class App extends Component {
         <Typography 
           variant="h3" align="center" component="h1"
         >Formulário</Typography >
-        <FormularioCadastro />
+        <FormularioCadastro aoEnviar={aoEnviarForm}/>
       </Container>
     );
   }
+}
+
+function aoEnviarForm(dados){
+  console.log(dados);
 }
 
 export default App;

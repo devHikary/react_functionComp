@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import { Button, FormControlLabel, Switch, TextField } from "@material-ui/core";
+import React, { useState } from 'react';
+import { Button, FormControlLabel, Switch, TextField } from '@material-ui/core';
 
-function FormularioCadastro() {
+function FormularioCadastro({aoEnviar}) {
+
   const [nome, setNome] = useState("");
   const [sobrenome, setSobrenome] = useState("");
   const [cpf, setCpf] = useState("");
@@ -9,23 +10,17 @@ function FormularioCadastro() {
   const [novidades, setNovidades] = useState(true);
 
   return (
-    <form
-      onSubmit={(event) => {
-        event.preventDefault();
-        console.log(nome, sobrenome, cpf, promocoes, novidades);
-      }}
-    >
+    <form onSubmit={(event) => {
+      event.preventDefault();
+      aoEnviar({nome, sobrenome, cpf, promocoes, novidades});
+    }}>
       <TextField
         value={nome}
         onChange={(evento) => {
           setNome(evento.target.value);
         }}
         margin="normal"
-        id="nome"
-        label="Nome"
-        variant="outlined"
-        fullWidth
-      />
+        id="nome" label="Nome" variant="outlined" fullWidth />
 
       <TextField
         value={sobrenome}
@@ -33,11 +28,7 @@ function FormularioCadastro() {
           setSobrenome(evento.target.value);
         }}
         margin="normal"
-        id="sobrenome"
-        label="Sobrenome"
-        variant="outlined"
-        fullWidth
-      />
+        id="sobrenome" label="Sobrenome" variant="outlined" fullWidth />
 
       <TextField
         value={cpf}
@@ -45,11 +36,7 @@ function FormularioCadastro() {
           setCpf(evento.target.value);
         }}
         margin="normal"
-        id="cpf"
-        label="CPF"
-        variant="outlined"
-        fullWidth
-      />
+        id="cpf" label="CPF" variant="outlined" fullWidth />
 
       <FormControlLabel
         control={
@@ -58,7 +45,6 @@ function FormularioCadastro() {
               setPromocoes(evento.target.checked);
             }}
             checked={promocoes}
-            defaultChecked={promocoes}
             color="primary"
             name="promocoes"
           />
@@ -73,7 +59,6 @@ function FormularioCadastro() {
               setNovidades(evento.target.checked);
             }}
             checked={novidades}
-            defaultChecked={novidades}
             color="primary"
             name="novidades"
           />
@@ -81,11 +66,12 @@ function FormularioCadastro() {
         label="Novidades"
       />
 
-      <Button variant="contained" color="primary" type="submit">
-        Cadastrar
-      </Button>
+      <Button
+        variant="contained" color="primary"
+        type="submit">Cadastrar</Button>
     </form>
   );
+
 }
 
 export default FormularioCadastro;
