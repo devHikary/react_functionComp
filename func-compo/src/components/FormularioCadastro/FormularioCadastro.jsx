@@ -4,22 +4,21 @@ import { Button, FormControlLabel, Switch, TextField } from "@material-ui/core";
 function FormularioCadastro() {
   const [nome, setNome] = useState("");
   const [sobrenome, setSobrenome] = useState("");
+  const [cpf, setCpf] = useState("");
+  const [promocoes, setPromocoes] = useState(true);
+  const [novidades, setNovidades] = useState(true);
 
   return (
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        console.log(nome, sobrenome);
+        console.log(nome, sobrenome, cpf, promocoes, novidades);
       }}
     >
       <TextField
         value={nome}
         onChange={(evento) => {
-          let tmpNome = evento.target.value;
-          if (tmpNome.length >= 3) {
-            tmpNome = tmpNome.substr(0, 3);
-          }
-          setNome(tmpNome);
+          setNome(evento.target.value);
         }}
         margin="normal"
         id="nome"
@@ -41,6 +40,10 @@ function FormularioCadastro() {
       />
 
       <TextField
+        value={cpf}
+        onChange={(evento) => {
+          setCpf(evento.target.value);
+        }}
         margin="normal"
         id="cpf"
         label="CPF"
@@ -49,12 +52,32 @@ function FormularioCadastro() {
       />
 
       <FormControlLabel
-        control={<Switch defaultChecked color="primary" name="promocoes" />}
+        control={
+          <Switch
+            onChange={(evento) => {
+              setPromocoes(evento.target.checked);
+            }}
+            checked={promocoes}
+            defaultChecked={promocoes}
+            color="primary"
+            name="promocoes"
+          />
+        }
         label="Promoções"
       />
 
       <FormControlLabel
-        control={<Switch defaultChecked color="primary" name="novidades" />}
+        control={
+          <Switch
+            onChange={(evento) => {
+              setNovidades(evento.target.checked);
+            }}
+            checked={novidades}
+            defaultChecked={novidades}
+            color="primary"
+            name="novidades"
+          />
+        }
         label="Novidades"
       />
 
