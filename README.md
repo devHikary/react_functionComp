@@ -49,3 +49,7 @@ npx create-react-app
 ```jsx
 function FormularioCadastro({aoEnviar}) {}
 ```
+
+### Aula 5
+
+- Deixando a função de validação **fora** do formulário, podemos alterar as validações dependendo da parte do projeto que estamos trabalhando o que torna esse componente mais reutilizável
