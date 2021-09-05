@@ -62,5 +62,18 @@ Instrutor: **Ricardo Bugan Debs**
 Continuação do projeto do formulário
 
 ### Aula 1
-- Boas práticas de UX ao trabalharmos com formulários
+- Boas práticas de UX em formulários
 - Por que separar um formulário em muitas partes
+### Aula 2
+- Funções dentro do JSX
+- Injeção de dependências
+- Reutilização de componentes
+### Aula 3
+- Hook de useEffect
+- Ciclo de vida dos componentes funcionais
+### Aula 4
+- Reutilização de funcionalidades
+- Contexto
+### Aula 5
+- Providers
+- Hooks customizadas
