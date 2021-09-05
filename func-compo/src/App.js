@@ -16,7 +16,7 @@ class App extends Component {
           variant="h3" align="center" component="h1"
         >Formulário</Typography >
         <FormularioCadastro aoEnviar={aoEnviarForm} validacoes={{
-          cpf: validarCPF, senha: validarSenha
+          cpf: validarCPF, senha: validarSenha, nome: validarSenha
         }} />
       </Container>
     );
