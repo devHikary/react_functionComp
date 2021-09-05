@@ -53,3 +53,14 @@ function FormularioCadastro({aoEnviar}) {}
 ### Aula 5
 
 - Deixando a função de validação **fora** do formulário, podemos alterar as validações dependendo da parte do projeto que estamos trabalhando o que torna esse componente mais reutilizável
+
+# React: Function Components, uma abordagem moderna
+Curso da plataforma Alura
+
+Instrutor: **Ricardo Bugan Debs**
+
+Continuação do projeto do formulário
+
+### Aula 1
+- Boas práticas de UX ao trabalharmos com formulários
+- Por que separar um formulário em muitas partes
